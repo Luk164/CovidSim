@@ -15,8 +15,6 @@ namespace CovidSim
         //Five days before symptoms show
         private short _symptomCountdown = 5;
 
-        
-
         public PersonOptions Options { get; set; } = new PersonOptions();
 
         public Person()
@@ -147,6 +145,7 @@ namespace CovidSim
             }
         }
 
+        //TODO: Check calculations in unit tests
         public double Protection => 100 - Gear.Aggregate(100.0, (current, gear) => current - current * gear.ProtectionModifier.Value / 100);
         public double Prevention => 100 - Gear.Aggregate(100.0, (current, gear) => current - current * gear.PreventionModifier.Value / 100);
 
