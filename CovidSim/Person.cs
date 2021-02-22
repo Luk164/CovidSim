@@ -7,32 +7,123 @@ namespace CovidSim
 {
     public class Person
     {
-        public HealthStatus Health { get; set; }
+        public HealthStatusEnum Health { get; set; }
         public List<IGear> Gear { get; set; }
+        private readonly Random _randomGenerator = new Random();
+        public QuarantineStatusEnum QuarantineStatus = QuarantineStatusEnum.Normal;
+
+        //Five days before symptoms show
+        private short _symptomCountdown = 5;
+
+        
+
+        public PersonOptions Options { get; set; } = new PersonOptions();
 
         public Person()
         {
-
         }
 
-        public void meet(Person otherPerson)
+        /// <summary>
+        /// Process a meeting between two people
+        /// </summary>
+        /// <param name="otherPerson">The person to be met with</param>
+        public void Meet(Person otherPerson)
         {
             if (IsContagious == otherPerson.IsContagious)
             {
                 //Both healthy or already infected, nothing to do here
                 return;
             }
+
+            if (IsContagious)
+            {
+                //Infecting other person
+
+                var roll = _randomGenerator.Next(0, 100);
+                if (roll > Prevention)
+                {
+                    roll = _randomGenerator.Next(0, 100);
+                    if (roll > otherPerson.Protection)
+                    {
+                        //Other person got infected
+                        otherPerson.Health = HealthStatusEnum.Asymptomatic;
+                    }
+                }
+            }
             else
             {
-                if (IsContagious)
+                //Other person infection this one
+
+                var roll = _randomGenerator.Next(0, 100);
+                if (roll > otherPerson.Prevention)
                 {
-                    //Infecting other person
+                    roll = _randomGenerator.Next(0, 100);
 
-                    var randomGenerator = new Random();
-
-                    var roll = randomGenerator.Next(0, 100);
-                    // var protection = 
+                    if (roll > Protection)
+                    {
+                        //This person got infected
+                        Health = HealthStatusEnum.Asymptomatic;
+                    }
                 }
+            }
+        }
+
+        public void EndOfDay()
+        {
+            if (IsContagious)
+            {
+                var roll = _randomGenerator.Next(0, 100);
+
+                if (Health == HealthStatusEnum.Asymptomatic)
+                {
+                    if (_symptomCountdown > 0)
+                    {
+                        //Symptoms have yet to show
+                        _symptomCountdown--;
+                    }
+                    else
+                    {
+                        // 30% chance to stay asymptomatic
+                        if (roll < 70)
+                        {
+                            //Symptoms show
+                            Health = HealthStatusEnum.Symptoms;
+
+                            //Roll for quarantine compliance
+                            roll = _randomGenerator.Next(0, 100);
+                            if (roll > Options.QuarantineCompliance.Value)
+                            {
+                                //Person stays at home
+                                QuarantineStatus = QuarantineStatusEnum.HomeQuarantine;
+                            }
+                        }
+                        else
+                        {
+                            //If after 5 days no symptoms patient becomes healthy again
+                            Health = HealthStatusEnum.Immune;
+                        }
+                    }
+                }
+
+                if (Health == HealthStatusEnum.Symptoms)
+                {
+                    if (Options.CureCountdown > 0)
+                    {
+                        Options.CureCountdown--;
+
+                        if (roll < Options.EscalatedSymptoms.Value)
+                        {
+                            //Symptoms escalate for 20% of cases
+                            Health = HealthStatusEnum.SeriouslyIll;
+                        }
+                    }
+                    else
+                    {
+                        Health = HealthStatusEnum.Immune;
+                    }
+                }
+
+                //TODO Finish for all cases
             }
         }
 
@@ -42,14 +133,13 @@ namespace CovidSim
             {
                 switch (Health)
                 {
-                    case HealthStatus.Asymptomatic:
-                    case HealthStatus.Symptoms:
-                    case HealthStatus.Infected:
+                    case HealthStatusEnum.Asymptomatic:
+                    case HealthStatusEnum.Symptoms:
+                    case HealthStatusEnum.SeriouslyIll:
                         return true;
-                    case HealthStatus.Healthy:
-                    case HealthStatus.Survived:
-                    case HealthStatus.VaccineSecondDose:
-                    case HealthStatus.Deceased:
+                    case HealthStatusEnum.Healthy:
+                    case HealthStatusEnum.Immune:
+                    case HealthStatusEnum.Deceased:
                         return false;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -57,28 +147,27 @@ namespace CovidSim
             }
         }
 
-        public double Protection => Gear.Aggregate(100.0, (current, gear) => current - current * gear.ProtectionModifier.Value / 100);
-        public double Prevention => Gear.Aggregate(100.0, (current, gear) => current - current * gear.PreventionModifier.Value / 100);
+        public double Protection => 100 - Gear.Aggregate(100.0, (current, gear) => current - current * gear.ProtectionModifier.Value / 100);
+        public double Prevention => 100 - Gear.Aggregate(100.0, (current, gear) => current - current * gear.PreventionModifier.Value / 100);
 
-        public enum HealthStatus
+        public enum HealthStatusEnum
         {
             Healthy,
             Asymptomatic,
             Symptoms,
-            Infected,
-            Survived,
-            VaccineSecondDose,
+            SeriouslyIll,
+            Immune,
             Deceased
         }
 
-        public enum QuarantineStatus
+        public enum QuarantineStatusEnum
         {
             Normal,
             HomeQuarantine,
             Hospital
         }
 
-        public enum CitizenClass
+        public enum CitizenClassEnum
         {
             Citizen,
             MedicalStaff,
