@@ -1,4 +1,4 @@
-﻿namespace CovidSim
+﻿namespace CovidSim.GearClasses
 {
     public interface IGear
     {

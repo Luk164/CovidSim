@@ -17,7 +17,7 @@ namespace CovidSim
             {
                 if (Value < 0 || Value > 100)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException(nameof(Value), "Value in modifier has to be between 0 and 100");
                 }
                 _value = value;
             }

@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using CovidSim.GearClasses;
 
-namespace CovidSim
+namespace CovidSim.PersonClasses
 {
     public class Person
     {
         public HealthStatusEnum Health { get; set; }
+        public QuarantineStatusEnum QuarantineStatus = QuarantineStatusEnum.Normal;
+        public CitizenClassEnum CitizenClass = CitizenClassEnum.Citizen;
         public List<IGear> Gear { get; set; }
         private readonly Random _randomGenerator = new Random();
-        public QuarantineStatusEnum QuarantineStatus = QuarantineStatusEnum.Normal;
+        public PersonOptions Options { get; set; }
 
-        //Five days before symptoms show
-        private short _symptomCountdown = 5;
-
-        public PersonOptions Options { get; set; } = new PersonOptions();
-
-        public Person()
+        public Person(PersonOptions options = null)
         {
+            Options = options ?? new PersonOptions();
         }
 
         /// <summary>
@@ -74,15 +72,15 @@ namespace CovidSim
 
                 if (Health == HealthStatusEnum.Asymptomatic)
                 {
-                    if (_symptomCountdown > 0)
+                    if (Options.SymptomCountdown > 0)
                     {
                         //Symptoms have yet to show
-                        _symptomCountdown--;
+                        Options.SymptomCountdown--;
                     }
                     else
                     {
-                        // 30% chance to stay asymptomatic
-                        if (roll < 70)
+                        //Chance to stay asymptomatic
+                        if (roll > Options.AsymptomaticProbability.Value)
                         {
                             //Symptoms show
                             Health = HealthStatusEnum.Symptoms;
@@ -113,15 +111,47 @@ namespace CovidSim
                         {
                             //Symptoms escalate for 20% of cases
                             Health = HealthStatusEnum.SeriouslyIll;
+
+                            //Roll for hospital visit
+                            roll = _randomGenerator.Next(0, 100);
+                            if (roll > Options.QuarantineCompliance.Value)
+                            {
+                                //Person goes to hospital
+                                QuarantineStatus = QuarantineStatusEnum.Hospital;
+                            }
+                            else
+                            {
+                                //At least stay home
+                                roll = _randomGenerator.Next(0, 100);
+                                if (roll > Options.QuarantineCompliance.Value)
+                                {
+                                    //Person stays at home
+                                    QuarantineStatus = QuarantineStatusEnum.HomeQuarantine;
+                                }
+                            }
                         }
                     }
                     else
                     {
                         Health = HealthStatusEnum.Immune;
+                        QuarantineStatus = QuarantineStatusEnum.Normal;
                     }
                 }
 
-                //TODO Finish for all cases
+                if (Health == HealthStatusEnum.SeriouslyIll)
+                {
+                    if (Options.CureCountdown > 0)
+                    {
+                        Options.CureCountdown--;
+
+                        if (roll > Options.DeathRate.Value)
+                        {
+                            //Patient died
+                            Health = HealthStatusEnum.Deceased;
+                            QuarantineStatus = QuarantineStatusEnum.Dead;
+                        }
+                    }
+                }
             }
         }
 
@@ -163,7 +193,8 @@ namespace CovidSim
         {
             Normal,
             HomeQuarantine,
-            Hospital
+            Hospital,
+            Dead
         }
 
         public enum CitizenClassEnum

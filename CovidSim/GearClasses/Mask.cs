@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CovidSim.GearEntities
+﻿namespace CovidSim.GearClasses
 {
     public class Mask : IGear
     {

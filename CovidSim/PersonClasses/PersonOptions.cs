@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CovidSim
+﻿namespace CovidSim.PersonClasses
 {
     public class PersonOptions
     {
@@ -24,6 +18,11 @@ namespace CovidSim
         public short CureCountdown { get; set; } = 14;
 
         /// <summary>
+        /// Days before symptoms show. Default is 5 days
+        /// </summary>
+        public short SymptomCountdown { get; set; } = 5;
+
+        /// <summary>
         /// Probability of more serious symptoms. Default 20%
         /// </summary>
         public Modifier EscalatedSymptoms { get; set; } = new Modifier {Value = 20};
@@ -32,5 +31,10 @@ namespace CovidSim
         /// Probability of dying due to COVID-19 serious symptoms or related complications
         /// </summary>
         public Modifier DeathRate { get; set; } = new Modifier {Value = 8};
+
+        /// <summary>
+        /// Probability of patient staying asymptomatic
+        /// </summary>
+        public Modifier AsymptomaticProbability { get; set; } = new Modifier {Value = 30};
     }
 }
