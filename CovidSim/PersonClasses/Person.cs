@@ -10,7 +10,7 @@ namespace CovidSim.PersonClasses
         public HealthStatusEnum Health { get; set; }
         public QuarantineStatusEnum QuarantineStatus = QuarantineStatusEnum.Normal;
         public CitizenClassEnum CitizenClass = CitizenClassEnum.Citizen;
-        public List<IGear> Gear { get; set; }
+        public List<IGear> Gear { get; set; } = new List<IGear>();
         private readonly Random _randomGenerator = new Random();
         public PersonOptions Options { get; set; }
 
@@ -100,8 +100,7 @@ namespace CovidSim.PersonClasses
                         }
                     }
                 }
-
-                if (Health == HealthStatusEnum.Symptoms)
+                else if (Health == HealthStatusEnum.Symptoms)
                 {
                     if (Options.CureCountdown > 0)
                     {
@@ -137,8 +136,7 @@ namespace CovidSim.PersonClasses
                         QuarantineStatus = QuarantineStatusEnum.Normal;
                     }
                 }
-
-                if (Health == HealthStatusEnum.SeriouslyIll)
+                else if (Health == HealthStatusEnum.SeriouslyIll)
                 {
                     if (Options.CureCountdown > 0)
                     {

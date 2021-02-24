@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CovidSim;
 
 namespace ConsoleApp
 {
@@ -9,14 +10,13 @@ namespace ConsoleApp
         {
             Console.WriteLine("Hello World!");
 
-            var test = new HashSet<int>();
-            test.Add(1);
-            test.Add(1);
-            test.Add(2);
-            test.Add(2);
-            test.Add(2);
+            var sim = new Simulator(100, 20, 10, 10, 10);
 
-            Console.WriteLine($"Hello World! {test.Count}");
+            while (true)
+            {
+                sim.Day();
+                Console.ReadLine();
+            }
         }
     }
 }

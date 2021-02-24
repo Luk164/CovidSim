@@ -4,9 +4,9 @@ namespace CovidSim.PersonClasses
 {
     public static class PersonFactory
     {
-        public static Person GenerateCitizen(PersonOptions options = null)
+        public static Person GenerateCitizen(Person.HealthStatusEnum healthStatus = Person.HealthStatusEnum.Healthy, PersonOptions options = null)
         {
-            return new Person(options);
+            return new Person(options){Health = healthStatus};
         }
 
         public static Person GenerateMedicalStaff(PersonOptions options = null)
