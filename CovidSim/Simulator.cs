@@ -11,7 +11,7 @@ namespace CovidSim
     {
         private ushort _day;
         private List<Person> Citizens { get; } = new List<Person>();
-        private List<(Person, IList<Person>)> Matches { get; } = new List<(Person, IList<Person>)>();
+        private List<MeetList> Matches { get; } = new List<MeetList>();
         public ushort PatientMaxCount { get; set; } = 15;
 
         public Simulator(uint citizenCount, uint medicalStaffCount, uint firstResponderCount, uint militaryCount, uint infectedCitizenCount)
@@ -45,6 +45,15 @@ namespace CovidSim
             {
                 Citizens.Add(PersonFactory.GenerateMilitary());
             }
+
+            Console.WriteLine($"Starting state {_day++}");
+            Console.WriteLine($"Healthy count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Healthy)}");
+            Console.WriteLine($"Asymptomatic count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Asymptomatic)}");
+            Console.WriteLine($"Symptoms count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Symptoms)}");
+            Console.WriteLine($"Seriously ill count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.SeriouslyIll)}");
+            Console.WriteLine($"Immune count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Immune)}");
+            Console.WriteLine($"Dead count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased)}");
+            Console.WriteLine("#############################################################################################");
         }
 
         public void Day()
@@ -73,10 +82,9 @@ namespace CovidSim
         {
             Parallel.ForEach(Matches, match =>
             {
-                var (person, peopleToMeet) = match;
-                foreach (var otherPerson in peopleToMeet)
+                foreach (var otherPerson in match.PeopleToMeet)
                 {
-                    person.Meet(otherPerson);
+                    match.Person.Meet(otherPerson);
                 }
             });
         }
@@ -97,10 +105,12 @@ namespace CovidSim
 
                 //Stage2 Add extra infected to meet for medical staff
 
-                if (person.CitizenClass == Person.CitizenClassEnum.MedicalStaff)
-                {
-                    PatientMeetings(person, random, randomIndexList, peopleToMeet);
-                }
+                // if (person.CitizenClass == Person.CitizenClassEnum.MedicalStaff)
+                // {
+                //     PatientMeetings(person, random, randomIndexList, peopleToMeet);
+                // }
+
+                Matches.Add(new MeetList(){Person = person, PeopleToMeet = peopleToMeet.ToList()});
             });
         }
 

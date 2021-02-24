@@ -6,7 +6,9 @@ namespace CovidSim.PersonClasses
     {
         public static Person GenerateCitizen(Person.HealthStatusEnum healthStatus = Person.HealthStatusEnum.Healthy, PersonOptions options = null)
         {
-            return new Person(options){Health = healthStatus};
+            var person = new Person(options){Health = healthStatus};
+            person.Gear.Add(new Mask());
+            return person;
         }
 
         public static Person GenerateMedicalStaff(PersonOptions options = null)

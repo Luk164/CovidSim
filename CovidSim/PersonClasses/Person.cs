@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using CovidSim.GearClasses;
 
@@ -14,6 +15,8 @@ namespace CovidSim.PersonClasses
         private readonly Random _randomGenerator = new Random();
         public PersonOptions Options { get; set; }
 
+        public ushort MeetingCount { get; private set; }
+
         public Person(PersonOptions options = null)
         {
             Options = options ?? new PersonOptions();
@@ -25,6 +28,7 @@ namespace CovidSim.PersonClasses
         /// <param name="otherPerson">The person to be met with</param>
         public void Meet(Person otherPerson)
         {
+            MeetingCount++;
             if (IsContagious == otherPerson.IsContagious)
             {
                 //Both healthy or already infected, nothing to do here
@@ -42,7 +46,12 @@ namespace CovidSim.PersonClasses
                     if (roll > otherPerson.Protection)
                     {
                         //Other person got infected
+                        Debug.WriteLine("Disease transmitted!");
                         otherPerson.Health = HealthStatusEnum.Asymptomatic;
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Transmission dodged!");
                     }
                 }
             }
@@ -58,14 +67,22 @@ namespace CovidSim.PersonClasses
                     if (roll > Protection)
                     {
                         //This person got infected
+                        Debug.WriteLine("Disease received!");
                         Health = HealthStatusEnum.Asymptomatic;
                     }
+                }
+                else
+                {
+                    Debug.WriteLine("Transmission dodged!");
                 }
             }
         }
 
         public void EndOfDay()
         {
+            Debug.WriteLine($"This person met: {MeetingCount} people and is {Health}");
+            MeetingCount = 0;
+
             if (IsContagious)
             {
                 var roll = _randomGenerator.Next(0, 100);
