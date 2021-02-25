@@ -16,8 +16,8 @@ namespace NUnitTests.GearEntitiesTests
         private HandSanitizer handSanitizer;
         private MedicalGown medicalGown;
 
-        [SetUp]
-        public void Setup()
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
         {
             mask = new Mask();
             gloves = new Gloves();
