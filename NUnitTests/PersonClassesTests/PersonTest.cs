@@ -24,7 +24,7 @@ namespace NUnitTests.PersonClassesTests
         [TestCase(Person.HealthStatusEnum.Symptoms, ExpectedResult = true)]
         public bool IsContagiousTest(Person.HealthStatusEnum healthStatus)
         {
-            return new Person {Health = healthStatus}.IsContagious;
+            return new Person { Health = healthStatus }.IsContagious;
         }
 
         [Test]
@@ -55,6 +55,34 @@ namespace NUnitTests.PersonClassesTests
 
             person.Meet(meetPerson);
             return person.IsContagious;
+        }
+
+        [TestCase(0, 100, ExpectedResult = Person.HealthStatusEnum.Immune)]
+        [TestCase(1, 0, ExpectedResult = Person.HealthStatusEnum.Asymptomatic)]
+        [TestCase(0, 0, ExpectedResult = Person.HealthStatusEnum.Symptoms)]
+        [TestCase(0, 0, ExpectedResult = Person.HealthStatusEnum.Symptoms)]
+        public Person.HealthStatusEnum EndOfDayForAsymptomaticTest(short symptomCountdown, short asymptomaticProbability)
+        {
+            person.Health = Person.HealthStatusEnum.Asymptomatic;
+            person.Options.SymptomCountdown = symptomCountdown;
+            person.Options.AsymptomaticProbability.Value = asymptomaticProbability;
+            
+            person.EndOfDay();
+            return person.Health;
+        }
+
+        [TestCase(0, 0, 0, Person.QuarantineStatusEnum.Normal, ExpectedResult = Person.HealthStatusEnum.Immune)]
+        [TestCase(1, 100, 0, Person.QuarantineStatusEnum.Hospital, ExpectedResult = Person.HealthStatusEnum.SeriouslyIll)]
+        public Person.HealthStatusEnum EndOfDayForSymptomsTest(short cureCountdown, short escalatedSymptoms, short quarantineCompliance, Person.QuarantineStatusEnum quarantineStatus)
+        {
+            person.Health = Person.HealthStatusEnum.Symptoms;
+            person.Options.CureCountdown = cureCountdown;
+            person.Options.EscalatedSymptoms.Value = escalatedSymptoms;
+            person.Options.QuarantineCompliance.Value = quarantineCompliance;
+
+            person.EndOfDay();
+            Assert.IsTrue(person.QuarantineStatus == quarantineStatus);
+            return person.Health;
         }
     }
 }
