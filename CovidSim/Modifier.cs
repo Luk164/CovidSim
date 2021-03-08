@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CovidSim
 {
+    /// <summary>
+    /// Modifier class. Used to save percentages
+    /// </summary>
     public class Modifier
     {
         private short _value;
 
+        /// <summary>
+        /// Value between 0 to 100
+        /// <exception cref="Value">Throws ArgumentOutOfRange</exception>
+        /// </summary>
         public short Value
         {
             get => _value;

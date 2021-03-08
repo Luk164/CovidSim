@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,13 +9,33 @@ using CovidSim.PersonClasses;
 
 namespace CovidSim
 {
+    /// <summary>
+    /// Primary simulator class
+    /// </summary>
     public class Simulator
     {
         private ushort _day;
         private List<Person> Citizens { get; } = new List<Person>();
         private List<MeetList> Matches { get; } = new List<MeetList>();
+
+        /// <summary>
+        /// Max amount of patients for one member of medical staff to handle
+        /// </summary>
         public ushort PatientMaxCount { get; set; } = 15;
 
+        /// <summary>
+        /// Meeting count for a single citizen/day
+        /// </summary>
+        public ushort MeetingCount { get; set; } = 20;
+
+        /// <summary>
+        /// Primary simulator class constructor
+        /// </summary>
+        /// <param name="citizenCount">Ordinary citizen count</param>
+        /// <param name="medicalStaffCount">Medical staff count</param>
+        /// <param name="firstResponderCount">First responder count</param>
+        /// <param name="militaryCount">Military personnel count</param>
+        /// <param name="infectedCitizenCount">Infected citizen count</param>
         public Simulator(uint citizenCount, uint medicalStaffCount, uint firstResponderCount, uint militaryCount, uint infectedCitizenCount)
         {
             //Generate people
@@ -56,6 +78,9 @@ namespace CovidSim
             Console.WriteLine("#############################################################################################");
         }
 
+        /// <summary>
+        /// Simulate one day
+        /// </summary>
         public void Day()
         {
             Matchmaker();
@@ -78,6 +103,9 @@ namespace CovidSim
             Console.WriteLine("#############################################################################################");
         }
 
+        /// <summary>
+        /// Executes meetings between person classes defined in Matches list
+        /// </summary>
         private void ExecuteAllMeetingsParallel()
         {
             Parallel.ForEach(Matches, match =>
@@ -89,6 +117,9 @@ namespace CovidSim
             });
         }
 
+        /// <summary>
+        /// Generate meetings for Matches list
+        /// </summary>
         public void Matchmaker()
         {
             Parallel.ForEach(Citizens, person =>
@@ -99,7 +130,7 @@ namespace CovidSim
                 var peopleToMeet = new List<Person>();
 
                 //Stage1
-                RandomMeetings(person, random, randomIndexList, peopleToMeet);
+                RandomMeetings(person, randomIndexList, peopleToMeet, random);
                 randomIndexList.Clear();
                 
 
@@ -110,16 +141,25 @@ namespace CovidSim
                 //     PatientMeetings(person, random, randomIndexList, peopleToMeet);
                 // }
 
-                Matches.Add(new MeetList(){Person = person, PeopleToMeet = peopleToMeet.ToList()});
+                Matches.Add(new MeetList{Person = person, PeopleToMeet = peopleToMeet.ToList()});
             });
         }
 
-        public void RandomMeetings(Person person, Random random, HashSet<int> randomIndexList, List<Person> peopleToMeet)
+        /// <summary>
+        /// Generate random meetings
+        /// </summary>
+        /// <param name="person">Person for whom these meetings are generated</param>
+        /// <param name="randomIndexList">Index list of people to meet</param>
+        /// <param name="peopleToMeet">List of people to meet to which meetings are added</param>
+        /// <param name="random">Random generator to increase efficiency</param>
+        public void RandomMeetings(Person person, HashSet<int> randomIndexList, List<Person> peopleToMeet,
+            Random random = null)
         {
-            //TODO Compute basic meeting amount
-            var meetingCount = 100;
+            random ??= new Random();
 
-            while (randomIndexList.Count < meetingCount)
+            //TODO Compute basic meeting amount
+
+            while (randomIndexList.Count < MeetingCount)
             {
                 randomIndexList.Add(random.Next(0, Citizens.Count));
             }
@@ -132,9 +172,23 @@ namespace CovidSim
             }
         }
 
-        public void PatientMeetings(Person person, Random random, HashSet<int> randomIndexList,
-            List<Person> peopleToMeet)
+        /// <summary>
+        /// Generate patient-doctor meetings
+        /// </summary>
+        /// <param name="person">Person for whom these meetings are generated. Should be a member of medical-staff</param>
+        /// <param name="randomIndexList">Index list of people to meet</param>
+        /// <param name="peopleToMeet">List of people to meet to which meetings are added</param>
+        /// <param name="random">Random generator to increase efficiency</param>
+        public void PatientMeetings(Person person, HashSet<int> randomIndexList,
+            List<Person> peopleToMeet, Random random = null)
         {
+            random ??= new Random();
+
+            if (person.CitizenClass != Person.CitizenClassEnum.MedicalStaff)
+            {
+                throw new WarningException("Warning! Doctor-patient meeting generated for non-medical staff!");
+            }
+
             //TODO Upgrade this to reflect total amount of medical personnel and infected patients in hospitals
             var infectedCitizens = Citizens.Where(p => p.IsContagious).ToList();
             while (randomIndexList.Count < PatientMaxCount &&

@@ -6,20 +6,43 @@ using CovidSim.GearClasses;
 
 namespace CovidSim.PersonClasses
 {
+    /// <summary>
+    /// Person class
+    /// </summary>
     public class Person
     {
+        /// <summary>
+        /// Health status
+        /// </summary>
         public HealthStatusEnum Health { get; set; }
+
+        /// <summary>
+        /// Quarantine status
+        /// </summary>
         public QuarantineStatusEnum QuarantineStatus = QuarantineStatusEnum.Normal;
+
+        /// <summary>
+        /// Citizen classification
+        /// </summary>
         public CitizenClassEnum CitizenClass = CitizenClassEnum.Citizen;
+
+        /// <summary>
+        /// Gear the person has available
+        /// </summary>
         public List<IGear> Gear { get; set; } = new List<IGear>();
         private readonly Random _randomGenerator = new Random();
         public PersonOptions Options { get; set; }
 
         public ushort MeetingCount { get; private set; }
 
-        public Person(PersonOptions options = null)
+        public Person(PersonOptions options = null, bool immunoCompromised = false)
         {
             Options = options ?? new PersonOptions();
+
+            if (!immunoCompromised)
+            {
+                Gear.Add(new Immunity());
+            }
         }
 
         /// <summary>
@@ -35,6 +58,17 @@ namespace CovidSim.PersonClasses
                 return;
             }
 
+            var quarantineRoll = _randomGenerator.Next(0, 100);
+
+            if (Health == HealthStatusEnum.Symptoms || Health == HealthStatusEnum.SeriouslyIll)
+            {
+                if (quarantineRoll < Options.QuarantineCompliance.Value)
+                {
+                    //This person is infected and decided to stay home
+                    return;
+                }
+            }
+
             if (IsContagious)
             {
                 //Infecting other person
@@ -46,18 +80,18 @@ namespace CovidSim.PersonClasses
                     if (roll > otherPerson.Protection)
                     {
                         //Other person got infected
-                        Debug.WriteLine("Disease transmitted!");
+                        // Debug.WriteLine("Disease transmitted!");
                         otherPerson.Health = HealthStatusEnum.Asymptomatic;
                     }
-                    else
-                    {
-                        Debug.WriteLine("Transmission dodged!");
-                    }
+                    // else
+                    // {
+                    //     Debug.WriteLine("Transmission dodged!");
+                    // }
                 }
             }
             else
             {
-                //Other person infection this one
+                //Other person infecting this one
 
                 var roll = _randomGenerator.Next(0, 100);
                 if (roll > otherPerson.Prevention)
@@ -67,59 +101,56 @@ namespace CovidSim.PersonClasses
                     if (roll > Protection)
                     {
                         //This person got infected
-                        Debug.WriteLine("Disease received!");
+                        // Debug.WriteLine("Disease received!");
                         Health = HealthStatusEnum.Asymptomatic;
                     }
                 }
                 else
                 {
-                    Debug.WriteLine("Transmission dodged!");
+                    // Debug.WriteLine("Transmission dodged!");
                 }
             }
         }
 
+        /// <summary>
+        /// Process person health status at the end of the day
+        /// </summary>
         public void EndOfDay()
         {
-            Debug.WriteLine($"This person met: {MeetingCount} people and is {Health}");
+            // Debug.WriteLine($"This person met: {MeetingCount} people and is {Health}");
             MeetingCount = 0;
 
             if (IsContagious)
             {
                 var roll = _randomGenerator.Next(0, 100);
 
-                if (Health == HealthStatusEnum.Asymptomatic)
+                switch (Health)
                 {
-                    if (Options.SymptomCountdown > 0)
-                    {
+                    case HealthStatusEnum.Asymptomatic when Options.SymptomCountdown > 0:
                         //Symptoms have yet to show
                         Options.SymptomCountdown--;
-                    }
-                    else
+                        break;
+                    //Chance to stay asymptomatic
+                    case HealthStatusEnum.Asymptomatic when roll > Options.AsymptomaticProbability.Value:
                     {
-                        //Chance to stay asymptomatic
-                        if (roll > Options.AsymptomaticProbability.Value)
-                        {
-                            //Symptoms show
-                            Health = HealthStatusEnum.Symptoms;
+                        //Symptoms show
+                        Health = HealthStatusEnum.Symptoms;
 
-                            //Roll for quarantine compliance
-                            roll = _randomGenerator.Next(0, 100);
-                            if (roll > Options.QuarantineCompliance.Value)
-                            {
-                                //Person stays at home
-                                QuarantineStatus = QuarantineStatusEnum.HomeQuarantine;
-                            }
-                        }
-                        else
+                        //Roll for quarantine compliance
+                        roll = _randomGenerator.Next(0, 100);
+                        if (roll > Options.QuarantineCompliance.Value)
                         {
-                            //If after 5 days no symptoms patient becomes healthy again
-                            Health = HealthStatusEnum.Immune;
+                            //Person stays at home
+                            QuarantineStatus = QuarantineStatusEnum.HomeQuarantine;
                         }
+
+                        break;
                     }
-                }
-                else if (Health == HealthStatusEnum.Symptoms)
-                {
-                    if (Options.CureCountdown > 0)
+                    case HealthStatusEnum.Asymptomatic:
+                        //If after 5 days no symptoms patient becomes healthy again and gains immunity
+                        Health = HealthStatusEnum.Immune;
+                        break;
+                    case HealthStatusEnum.Symptoms when Options.CureCountdown > 0:
                     {
                         Options.CureCountdown--;
 
@@ -146,30 +177,42 @@ namespace CovidSim.PersonClasses
                                 }
                             }
                         }
+
+                        break;
                     }
-                    else
-                    {
+                    case HealthStatusEnum.Symptoms:
                         Health = HealthStatusEnum.Immune;
                         QuarantineStatus = QuarantineStatusEnum.Normal;
-                    }
-                }
-                else if (Health == HealthStatusEnum.SeriouslyIll)
-                {
-                    if (Options.CureCountdown > 0)
+                        break;
+                    case HealthStatusEnum.SeriouslyIll:
                     {
-                        Options.CureCountdown--;
-
-                        if (roll > Options.DeathRate.Value)
+                        if (Options.CureCountdown > 0)
                         {
-                            //Patient died
-                            Health = HealthStatusEnum.Deceased;
-                            QuarantineStatus = QuarantineStatusEnum.Dead;
+                            Options.CureCountdown--;
+
+                            if (roll > Options.DeathRate.Value)
+                            {
+                                //Patient died
+                                Health = HealthStatusEnum.Deceased;
+                                QuarantineStatus = QuarantineStatusEnum.Dead;
+                            }
                         }
+
+                        break;
                     }
+                    case HealthStatusEnum.Healthy:
+                    case HealthStatusEnum.Immune:
+                    case HealthStatusEnum.Deceased:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(Health), "Health enumerator is out of range!");
                 }
             }
         }
 
+        /// <summary>
+        /// Get person contagiousness status
+        /// </summary>
         public bool IsContagious
         {
             get
@@ -190,10 +233,20 @@ namespace CovidSim.PersonClasses
             }
         }
 
-        //TODO: Check calculations in unit tests
+        //TODO: Check for better formula
+        /// <summary>
+        /// Protection calculation based on persons gear including immunity. Based on diminishing returns principle
+        /// </summary>
         public double Protection => 100 - Gear.Aggregate(100.0, (current, gear) => current - current * gear.ProtectionModifier.Value / 100);
+
+        /// <summary>
+        /// Prevention calculation based on persons gear. Based on diminishing returns principle
+        /// </summary>
         public double Prevention => 100 - Gear.Aggregate(100.0, (current, gear) => current - current * gear.PreventionModifier.Value / 100);
 
+        /// <summary>
+        /// Health status enumerator
+        /// </summary>
         public enum HealthStatusEnum
         {
             Healthy,
@@ -204,6 +257,9 @@ namespace CovidSim.PersonClasses
             Deceased
         }
 
+        /// <summary>
+        /// Quarantine status enumerator
+        /// </summary>
         public enum QuarantineStatusEnum
         {
             Normal,
@@ -212,6 +268,9 @@ namespace CovidSim.PersonClasses
             Dead
         }
 
+        /// <summary>
+        /// Citizen class enumerator
+        /// </summary>
         public enum CitizenClassEnum
         {
             Citizen,

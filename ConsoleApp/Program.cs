@@ -10,7 +10,7 @@ namespace ConsoleApp
         {
             Console.WriteLine("Hello World!");
 
-            var sim = new Simulator(100, 20, 10, 10, 10);
+            var sim = new Simulator(1000, 20, 10, 10, 10);
 
             while (true)
             {
