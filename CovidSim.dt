@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT4H38M10.0316164S" SolutionTotalViewTime="PT9H7M31.8352181S" SolutionTotalDebugTime="PT19M15.3233037S">
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT5H11M25.5218194S" SolutionTotalViewTime="PT11H1M0.4670893S" SolutionTotalDebugTime="PT20M8.0863751S">
   <FileVersion>
     <Major>1</Major>
     <Minor>0</Minor>
@@ -14,205 +14,71 @@
   </ProjectsCreatedDateList>
   <SessionTimeList />
   <LastSessionTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1.7003715S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT1M4.8232411S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimML.Model\ConsumeModel.cs</Item>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\App.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimML.Model\CovidSimML.Model.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:02:40.350535+01:00</CreatedDate>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-17T14:42:18.8239312+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M33.0636724S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT3M10.5261659S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimML.ConsoleApp\CovidSimML.ConsoleApp.csproj</Item>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Views\SimulatorPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimML.ConsoleApp\CovidSimML.ConsoleApp.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:00:50.423979+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT7M12.0426075S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>Debug Mode</Item>
-      <ItemType>DebugModeItem</ItemType>
-      <ProjectName />
-      <CreatedDate>2021-03-08T11:17:11.4954267+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT46.3798316S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\Event.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T15:11:02.2005128+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1.4862464S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\GearClasses\Gloves.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T14:55:34.4843403+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1.7271107S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\GearClasses\HandSanitizer.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T14:55:33.625423+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT3.2693785S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\GearClasses\IGear.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T14:55:24.912391+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT13.553427S" EditActiveTime="PT1M38.6361369S">
-      <ModifiedDate>2021-03-08T11:29:10.8059842+01:00</ModifiedDate>
-      <ModifiedBy>lukij</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\GearClasses\Immunity.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:27:21.6626664+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT4.3324458S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\GearClasses\Mask.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:31:39.2788905+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT49.7974602S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\GearClasses\MedicalGown.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T14:55:28.5759132+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT16.8588816S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimML.ConsoleApp\ModelBuilder.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimML.ConsoleApp\CovidSimML.ConsoleApp.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:02:23.4906521+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1.3966497S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimML.Model\ModelInput.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimML.Model\CovidSimML.Model.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:02:42.0529086+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT6M1.2381581S" EditActiveTime="PT8M33.6471095S">
-      <ModifiedDate>2021-03-08T15:10:58.5818925+01:00</ModifiedDate>
-      <ModifiedBy>lukij</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\Modifier.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T14:56:27.3002748+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT34M21.4879494S" EditActiveTime="PT7M38.3162795S">
-      <ModifiedDate>2021-03-08T15:14:53.103899+01:00</ModifiedDate>
-      <ModifiedBy>lukij</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\PersonClasses\Person.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:03:35.1774116+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT5M41.5887857S" EditActiveTime="PT3M17.5802385S">
-      <ModifiedDate>2021-03-08T14:55:20.6493491+01:00</ModifiedDate>
-      <ModifiedBy>lukij</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\PersonClasses\PersonFactory.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:03:40.2717454+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT3M38.1513832S" EditActiveTime="PT7M50.2338779S">
-      <ModifiedDate>2021-03-08T15:15:03.503015+01:00</ModifiedDate>
-      <ModifiedBy>lukij</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\PersonClasses\PersonOptions.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:02:55.4769183+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT12.0232964S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimML.ConsoleApp\Program.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimML.ConsoleApp\CovidSimML.ConsoleApp.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:02:43.4515826+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT38.5708482S" EditActiveTime="PT6.2102353S">
-      <ModifiedDate>2021-03-08T11:16:59.4331528+01:00</ModifiedDate>
-      <ModifiedBy>lukij</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\ConsoleApp\Program.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\ConsoleApp\ConsoleApp.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:16:50.2276457+01:00</CreatedDate>
-      <ViewedBy>lukij</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT31M57.4808376S" EditActiveTime="PT8M34.274483S">
-      <ModifiedDate>2021-03-08T14:43:51.2329362+01:00</ModifiedDate>
-      <ModifiedBy>lukij</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\Simulator.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
-      <CreatedDate>2021-03-08T11:16:23.2204544+01:00</CreatedDate>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-17T14:39:08.2957636+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
   </LastSessionTimeList>
   <TotalTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT4.9681796S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\app.manifest</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:10:39.3262644+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT30.3613046S" EditActiveTime="PT2.5718337S">
+      <ModifiedDate>2021-03-16T15:16:34.1432977+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\App.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T14:58:16.1103247+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT22M35.9225863S" EditActiveTime="PT13.0087495S">
+      <ModifiedDate>2021-03-16T15:18:30.9199582+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\App.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:04:32.851178+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M11.9790066S" EditActiveTime="PT1M37.7910713S">
+      <ModifiedDate>2021-03-16T15:39:26.6587438+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Services\ApplicationHostService.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:37:04.6727433+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT21.7883998S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
@@ -243,6 +109,26 @@
       <CreatedDate>2021-02-22T11:58:51.6001441+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT31.2104781S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:16:54.9176328+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M39.4318383S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI.Packaging\CovidSimGUI.Packaging.wapproj</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI.Packaging\CovidSimGUI.Packaging.wapproj</ProjectName>
+      <CreatedDate>2021-03-16T15:14:13.0051623+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT1M33.0636724S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
@@ -253,10 +139,10 @@
       <CreatedDate>2021-03-08T11:00:50.423979+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT19M15.3233037S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT20M8.0863751S" EditActiveTime="PT1M13.9360225S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>5</ViewedCount>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>6</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
@@ -296,11 +182,11 @@
       <CreatedDate>2021-02-23T15:58:20.315549+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT5.9726368S" EditActiveTime="PT1.9398081S">
+    <DevTrackerDataItem ViewActiveTime="PT8.356106S" EditActiveTime="PT1.9398081S">
       <ModifiedDate>2021-02-23T16:37:34.1602027+01:00</ModifiedDate>
       <ModifiedBy>lukij</ModifiedBy>
       <EditedCount>1</EditedCount>
-      <ViewedCount>2</ViewedCount>
+      <ViewedCount>3</ViewedCount>
       <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\GearClasses\Gloves.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
@@ -327,6 +213,17 @@
       <ItemType>ProjectItem</ItemType>
       <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
       <CreatedDate>2021-02-23T16:37:31.050289+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M13.5236256S" EditActiveTime="PT33.4643075S">
+      <ModifiedDate>2021-03-16T16:17:01.3486996+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Styles\Themes\HC.Dark.Blue.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T16:15:35.2722852+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT1.1419399S" EditActiveTime="PT0S">
@@ -427,6 +324,26 @@
       <CreatedDate>2021-02-24T16:28:26.9354281+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4.4787649S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Program Files\dotnet\sdk\5.0.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2021-03-16T15:36:39.1332783+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.7012442S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Program Files\dotnet\sdk\5.0.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.TargetFrameworkInference.targets</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2021-03-16T15:10:14.1702742+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT44.9323748S" EditActiveTime="PT19M42.9773847S">
       <ModifiedDate>2021-03-05T17:32:31.9640992+01:00</ModifiedDate>
       <ModifiedBy>lukij</ModifiedBy>
@@ -469,6 +386,16 @@
       <CreatedDate>2021-02-22T13:32:16.3662506+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT26.6148645S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\NUnitTests\ModifierTest.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\NUnitTests\NUnitTests.csproj</ProjectName>
+      <CreatedDate>2021-03-08T15:26:01.7309226+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT1M36.5982279S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
@@ -477,6 +404,17 @@
       <ItemType>ProjectItem</ItemType>
       <ProjectName />
       <CreatedDate>2021-02-24T16:37:03.5540597+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.6946339S" EditActiveTime="PT1.4463873S">
+      <ModifiedDate>2021-03-16T15:17:37.0555323+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Services\PersistAndRestoreService.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:17:33.1661024+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT2H12M50.5969231S" EditActiveTime="PT1H18M25.5320448S">
@@ -490,11 +428,11 @@
       <CreatedDate>2021-02-22T11:17:55.0469135+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1H16M51.3307856S" EditActiveTime="PT11M25.819204S">
+    <DevTrackerDataItem ViewActiveTime="PT1H32M55.9435683S" EditActiveTime="PT11M25.819204S">
       <ModifiedDate>2021-03-08T15:14:53.103899+01:00</ModifiedDate>
       <ModifiedBy>lukij</ModifiedBy>
       <EditedCount>4</EditedCount>
-      <ViewedCount>5</ViewedCount>
+      <ViewedCount>8</ViewedCount>
       <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\PersonClasses\Person.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
@@ -587,6 +525,16 @@
       <CreatedDate>2021-02-22T16:34:42.6121547+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.5899276S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Properties\Resources.resx</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:10:33.9765352+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT3H10M2.2607593S" EditActiveTime="PT1H56M21.9444901S">
       <ModifiedDate>2021-03-08T14:43:51.2329362+01:00</ModifiedDate>
       <ModifiedBy>lukij</ModifiedBy>
@@ -598,6 +546,38 @@
       <CreatedDate>2021-02-23T15:05:26.0425435+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT41M48.1133237S" EditActiveTime="PT25M36.4467428S">
+      <ModifiedDate>2021-03-16T16:24:51.2762515+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>2</EditedCount>
+      <ViewedCount>3</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Views\SimulatorPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T14:57:49.8497798+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT24M0.0856744S" EditActiveTime="PT5M10.7640968S">
+      <ModifiedDate>2021-03-16T16:22:50.5659687+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Views\SimulatorPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:58:52.562545+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.806029S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\NUnitTests\SimulatorTest.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\NUnitTests\NUnitTests.csproj</ProjectName>
+      <CreatedDate>2021-03-08T15:26:02.9488149+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT16.0685343S" EditActiveTime="PT0.0827788S">
       <ModifiedDate>2021-02-22T16:36:50.5883673+01:00</ModifiedDate>
       <ModifiedBy>lukij</ModifiedBy>
@@ -607,6 +587,16 @@
       <ItemType>ProjectItem</ItemType>
       <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
       <CreatedDate>2021-02-22T16:36:50.2961479+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M18.164169S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Styles\TextBlock.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T16:15:27.5003076+01:00</CreatedDate>
       <ViewedBy>lukij</ViewedBy>
     </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT15M51.5795776S" EditActiveTime="PT0S">
@@ -621,6 +611,284 @@
     </DevTrackerDataItem>
   </TotalTimeList>
   <HistoryTimeList>
+    <DevTrackerDataItem ViewActiveTime="PT1M4.8182401S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\App.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-17T14:42:18.8239312+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT3M10.5261659S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Views\SimulatorPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-17T14:39:08.2957636+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M13.5236256S" EditActiveTime="PT33.4643075S">
+      <ModifiedDate>2021-03-16T16:17:01.3486996+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Styles\Themes\HC.Dark.Blue.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T16:15:35.2722852+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M18.164169S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Styles\TextBlock.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T16:15:27.5003076+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.628993S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>d:\user_files\projekty\c#\covidsim\CovidSim\PersonClasses\Person.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
+      <CreatedDate>2021-03-16T16:06:36.8280704+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT24M0.0856744S" EditActiveTime="PT5M10.7640968S">
+      <ModifiedDate>2021-03-16T16:22:50.5659687+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Views\SimulatorPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:58:52.562545+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT32M20.7502862S" EditActiveTime="PT24M29.534858S">
+      <ModifiedDate>2021-03-16T16:24:51.2762515+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>d:\user_files\projekty\c#\covidsim\CovidSimGUI\Views\SimulatorPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:40:18.6160656+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT0.6328392S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>d:\user_files\projekty\c#\covidsim\CovidSimGUI\App.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:40:16.897214+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M11.9790066S" EditActiveTime="PT1M37.7910713S">
+      <ModifiedDate>2021-03-16T15:39:26.6587438+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Services\ApplicationHostService.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:37:04.6727433+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT52.7630714S" EditActiveTime="PT1M13.9360225S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2021-03-16T15:36:48.2730351+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4.4787649S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Program Files\dotnet\sdk\5.0.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.DefaultItems.targets</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2021-03-16T15:36:39.1332783+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT11M16.1548762S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>d:\user_files\projekty\c#\covidsim\CovidSimGUI\App.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:24:07.1384299+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT16.2318923S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:23:56.235537+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.6946339S" EditActiveTime="PT1.4463873S">
+      <ModifiedDate>2021-03-16T15:17:37.0555323+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Services\PersistAndRestoreService.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:17:33.1661024+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14.9785858S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:16:54.9176328+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M39.4318383S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI.Packaging\CovidSimGUI.Packaging.wapproj</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI.Packaging\CovidSimGUI.Packaging.wapproj</ProjectName>
+      <CreatedDate>2021-03-16T15:14:13.0051623+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4.9681796S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\app.manifest</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:10:39.3262644+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.5899276S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Properties\Resources.resx</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:10:33.9765352+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.7012442S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Program Files\dotnet\sdk\5.0.201\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.TargetFrameworkInference.targets</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2021-03-16T15:10:14.1702742+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT10M14.9544705S" EditActiveTime="PT13.0087495S">
+      <ModifiedDate>2021-03-16T15:18:30.9199582+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\App.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T15:04:32.851178+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.3834692S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\GearClasses\Gloves.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
+      <CreatedDate>2021-03-16T14:58:21.1277757+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT29.7284654S" EditActiveTime="PT2.5718337S">
+      <ModifiedDate>2021-03-16T15:16:34.1432977+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\App.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T14:58:16.1103247+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT6M16.8398719S" EditActiveTime="PT1M6.9118848S">
+      <ModifiedDate>2021-03-16T15:00:39.1716469+01:00</ModifiedDate>
+      <ModifiedBy>lukij</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\Views\SimulatorPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSimGUI\CovidSimGUI.csproj</ProjectName>
+      <CreatedDate>2021-03-16T14:57:49.8497798+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14M36.032655S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\PersonClasses\Person.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
+      <CreatedDate>2021-03-16T14:33:52.944574+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2.806029S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\NUnitTests\SimulatorTest.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\NUnitTests\NUnitTests.csproj</ProjectName>
+      <CreatedDate>2021-03-08T15:26:02.9488149+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT26.6148645S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\NUnitTests\ModifierTest.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\NUnitTests\NUnitTests.csproj</ProjectName>
+      <CreatedDate>2021-03-08T15:26:01.7309226+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M27.9531343S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>D:\User_files\Projekty\C#\CovidSim\CovidSim\PersonClasses\Person.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>D:\User_files\Projekty\C#\CovidSim\CovidSim\CovidSim.csproj</ProjectName>
+      <CreatedDate>2021-03-08T15:24:38.4407216+01:00</CreatedDate>
+      <ViewedBy>lukij</ViewedBy>
+    </DevTrackerDataItem>
     <DevTrackerDataItem ViewActiveTime="PT46.3798316S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
