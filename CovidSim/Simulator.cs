@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CovidSim.Events;
 using CovidSim.PersonClasses;
 
 namespace CovidSim
@@ -18,6 +19,10 @@ namespace CovidSim
         private List<Person> Citizens { get; } = new List<Person>();
         private List<MeetList> Matches { get; } = new List<MeetList>();
 
+        public delegate void EndOfDayEventHandler(object sender, EndOfDayEventArgs endOfDayEventArgs);
+
+        public event EndOfDayEventHandler EndOfDayEvent;
+
         /// <summary>
         /// Max amount of patients for one member of medical staff to handle
         /// </summary>
@@ -29,14 +34,15 @@ namespace CovidSim
         public ushort MeetingCount { get; set; } = 20;
 
         /// <summary>
-        /// Primary simulator class constructor
+        /// Primary simulator class constructor //TODO: Add more complex settings
         /// </summary>
         /// <param name="citizenCount">Ordinary citizen count</param>
         /// <param name="medicalStaffCount">Medical staff count</param>
         /// <param name="firstResponderCount">First responder count</param>
         /// <param name="militaryCount">Military personnel count</param>
         /// <param name="infectedCitizenCount">Infected citizen count</param>
-        public Simulator(uint citizenCount, uint medicalStaffCount, uint firstResponderCount, uint militaryCount, uint infectedCitizenCount)
+        public Simulator(uint citizenCount, uint medicalStaffCount, uint firstResponderCount, uint militaryCount,
+            uint infectedCitizenCount)
         {
             //Generate people
             for (uint i = 0; i < citizenCount; i++)
@@ -69,13 +75,20 @@ namespace CovidSim
             }
 
             Console.WriteLine($"Starting state {_day++}");
-            Console.WriteLine($"Healthy count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Healthy)}");
-            Console.WriteLine($"Asymptomatic count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Asymptomatic)}");
-            Console.WriteLine($"Symptoms count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Symptoms)}");
-            Console.WriteLine($"Seriously ill count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.SeriouslyIll)}");
-            Console.WriteLine($"Immune count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Immune)}");
-            Console.WriteLine($"Dead count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased)}");
-            Console.WriteLine("#############################################################################################");
+            Console.WriteLine(
+                $"Healthy count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Healthy)}");
+            Console.WriteLine(
+                $"Asymptomatic count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Asymptomatic)}");
+            Console.WriteLine(
+                $"Symptoms count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Symptoms)}");
+            Console.WriteLine(
+                $"Seriously ill count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.SeriouslyIll)}");
+            Console.WriteLine(
+                $"Immune count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Immune)}");
+            Console.WriteLine(
+                $"Dead count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased)}");
+            Console.WriteLine(
+                "#############################################################################################");
         }
 
         /// <summary>
@@ -88,19 +101,35 @@ namespace CovidSim
             ExecuteAllMeetingsParallel();
 
             //Run end of day checks
-            Parallel.ForEach(Citizens, person =>
-            {
-                person.EndOfDay();
-            });
+            Parallel.ForEach(Citizens, person => { person.EndOfDay(); });
 
             Console.WriteLine($"End of day {_day++}");
-            Console.WriteLine($"Healthy count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Healthy)}");
-            Console.WriteLine($"Asymptomatic count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Asymptomatic)}");
-            Console.WriteLine($"Symptoms count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Symptoms)}");
-            Console.WriteLine($"Seriously ill count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.SeriouslyIll)}");
-            Console.WriteLine($"Immune count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Immune)}");
-            Console.WriteLine($"Dead count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased)}");
-            Console.WriteLine("#############################################################################################");
+            Console.WriteLine(
+                $"Healthy count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Healthy)}");
+            Console.WriteLine(
+                $"Asymptomatic count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Asymptomatic)}");
+            Console.WriteLine(
+                $"Symptoms count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Symptoms)}");
+            Console.WriteLine(
+                $"Seriously ill count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.SeriouslyIll)}");
+            Console.WriteLine(
+                $"Immune count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Immune)}");
+            Console.WriteLine(
+                $"Dead count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased)}");
+            Console.WriteLine(
+                "#############################################################################################");
+
+            EndOfDayEvent?.Invoke(this, new EndOfDayEventArgs
+            {
+                HealthyCount = (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.Healthy),
+                AsymptomaticCount =
+                    (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.Asymptomatic),
+                SymptomsCount = (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.Symptoms),
+                SeriouslyIllCount =
+                    (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.SeriouslyIll),
+                DeceasedCount = (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased),
+                ImmuneCount = (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.Immune)
+            });
         }
 
         /// <summary>
@@ -132,7 +161,7 @@ namespace CovidSim
                 //Stage1
                 RandomMeetings(person, randomIndexList, peopleToMeet, random);
                 randomIndexList.Clear();
-                
+
 
                 //Stage2 Add extra infected to meet for medical staff
 
@@ -141,7 +170,7 @@ namespace CovidSim
                 //     PatientMeetings(person, random, randomIndexList, peopleToMeet);
                 // }
 
-                Matches.Add(new MeetList{Person = person, PeopleToMeet = peopleToMeet.ToList()});
+                Matches.Add(new MeetList {Person = person, PeopleToMeet = peopleToMeet.ToList()});
             });
         }
 
@@ -165,7 +194,7 @@ namespace CovidSim
             }
 
             //Use the random indexes to select people to meet
-            
+
             foreach (var index in randomIndexList)
             {
                 peopleToMeet.Add(Citizens[index]);
