@@ -26,6 +26,11 @@ namespace CovidSimGUI.Views
 
 
         private readonly LineSeries _healthyLine;
+        private readonly LineSeries _asymptomaticLine;
+        private readonly LineSeries _symptomsLine;
+        private readonly LineSeries _seriouslyIllLine;
+        private readonly LineSeries _deceasedLine;
+        private readonly LineSeries _immuneLine;
 
         public SimulatorPage()
         {
@@ -34,12 +39,48 @@ namespace CovidSimGUI.Views
 
             _healthyLine = new LineSeries
             {
-                Values = new ChartValues<double>()
+                Values = new ChartValues<double> {CitizenCount + MedicalStaffCount + FirstResponderCount + MilitaryCount},
+                Title = "Healthy"
+            };
+            
+            _asymptomaticLine = new LineSeries
+            {
+                Values = new ChartValues<double> {0},
+                Title = "Asymptomatic"
+            };
+
+            _symptomsLine = new LineSeries
+            {
+                Values = new ChartValues<double> {InfectedCitizenCount},
+                Title = "Infected"
+            };
+
+            _seriouslyIllLine = new LineSeries
+            {
+                Values = new ChartValues<double> {0},
+                Title = "Serious"
+            };
+
+            _immuneLine = new LineSeries
+            {
+                Values = new ChartValues<double> {0},
+                Title = "Immune"
+            };
+
+            _deceasedLine = new LineSeries
+            {
+                Values = new ChartValues<double> {0},
+                Title = "Deceased"
             };
 
             SeriesCollection = new SeriesCollection
             {
-                _healthyLine
+                _healthyLine,
+                _asymptomaticLine,
+                _symptomsLine,
+                _seriouslyIllLine,
+                _immuneLine,
+                _deceasedLine
             };
 
             DataContext = this;
@@ -67,10 +108,17 @@ namespace CovidSimGUI.Views
 
         private async void Bt_start(object sender, RoutedEventArgs e)
         {
+            ((Button) sender).IsEnabled = false;
+
             var sim = new Simulator(CitizenCount, MedicalStaffCount, FirstResponderCount, MilitaryCount, InfectedCitizenCount);
             sim.EndOfDayEvent += (o, args) =>
             {
                 _healthyLine.Values.Add((double) args.HealthyCount);
+                _asymptomaticLine.Values.Add((double) args.AsymptomaticCount);
+                _symptomsLine.Values.Add((double) args.SymptomsCount);
+                _seriouslyIllLine.Values.Add((double) args.SeriouslyIllCount);
+                _immuneLine.Values.Add((double) args.ImmuneCount);
+                _deceasedLine.Values.Add((double) args.DeceasedCount);
             };
 
             await Task.Run(() =>

@@ -34,20 +34,34 @@
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="button" Content="Start" Click="Bt_start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <Button Content="Start" Click="Bt_start" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
             <ProgressBar Grid.Column="2" Height="6" Margin="10,382,10,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox" Grid.Column="2" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="191"/>
-            <lvc:CartesianChart Grid.Column="2" Series="{Binding SeriesCollection}" Margin="10,206,10,25" />
-            <Button x:Name="button1" Click="bt_testClick" Content="Test" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox" Grid.Column="2" Margin="10,10,10,0" TextWrapping="Wrap" IsReadOnly="True" VerticalAlignment="Top" Height="191"/>
+            <lvc:CartesianChart Grid.Column="2" Series="{Binding SeriesCollection}" Margin="10,206,10,25" >
+                <lvc:CartesianChart.Resources>
+                    <Style TargetType="lvc:DefaultTooltip">
+                        <Setter Property="Background" Value="DimGray"></Setter>
+                        <Setter Property="Foreground" Value="GhostWhite"></Setter>
+                    </Style>
+                </lvc:CartesianChart.Resources>
+            </lvc:CartesianChart>
 
             <ScrollViewer Grid.Column="1" Margin="10,10,7,10" RenderTransformOrigin="0.5,0.5">
                 <StackPanel>
-                    <Label Content="Citizen count" Margin="10,10,10,0" Height="30" VerticalAlignment="Top"/>
+                    <Label Content="Citizen count" Margin="0,10,10,0" Height="30" VerticalAlignment="Top"/>
                     <mah:NumericUpDown Value="{Binding CitizenCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="Medical staff count" Margin="0,10,10,0" Height="30" VerticalAlignment="Top"/>
+                    <mah:NumericUpDown Value="{Binding MedicalStaffCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="First responder count" Margin="0,10,10,0" Height="30" VerticalAlignment="Top"/>
+                    <mah:NumericUpDown Value="{Binding FirstResponderCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="Military count" Margin="0,10,10,0" Height="30" VerticalAlignment="Top"/>
+                    <mah:NumericUpDown Value="{Binding MilitaryCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="Infected count" Margin="0,10,10,0" Height="30" VerticalAlignment="Top"/>
+                    <mah:NumericUpDown Value="{Binding InfectedCitizenCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </ScrollViewer>
-            <Label x:Name="label" Content="Day count:" Margin="10,74,10,0" VerticalAlignment="Top"/>
-            <mah:NumericUpDown Value="{Binding DayCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10,100,10,0" VerticalAlignment="Top"/>
+            <Label x:Name="label" Content="Day count:" Margin="10,42,10,0" VerticalAlignment="Top"/>
+            <mah:NumericUpDown Value="{Binding DayCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10,68,10,0" VerticalAlignment="Top"/>
             <!-- <Label Grid.Column="1" Content="Citizen count" Margin="10,10,10,0" Height="30" VerticalAlignment="Top"/> -->
             <!-- <mah:NumericUpDown Grid.Column="1" Margin="10,40,10,0" Value="{Binding CitizenCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/> -->
         </Grid>

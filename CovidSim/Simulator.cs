@@ -88,7 +88,7 @@ namespace CovidSim
             Console.WriteLine(
                 $"Dead count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased)}");
             Console.WriteLine(
-                "#############################################################################################");
+                "###############");
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace CovidSim
             Console.WriteLine(
                 $"Dead count: {Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased)}");
             Console.WriteLine(
-                "#############################################################################################");
+                "##############");
 
             EndOfDayEvent?.Invoke(this, new EndOfDayEventArgs
             {

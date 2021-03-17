@@ -19,16 +19,18 @@ namespace CovidSimGUI.Helpers
 
         public override void Write(char value)
         {
-            textbox.Text += value;
+            textbox.Dispatcher.Invoke(()=> {
+                // Code causing the exception or requires UI thread access
+                textbox.Text += value;
+            });
         }
 
         public override void Write(string value)
         {
-            var test = textbox.Dispatcher;
-            // Dispatcher.Invoke(()=> {
-            //     // Code causing the exception or requires UI thread access
-            //     textbox.Text += value;
-            // });
+            textbox.Dispatcher.Invoke(()=> {
+                // Code causing the exception or requires UI thread access
+                textbox.Text += value;
+            });
         }
 
         public override Encoding Encoding => Encoding.ASCII;
