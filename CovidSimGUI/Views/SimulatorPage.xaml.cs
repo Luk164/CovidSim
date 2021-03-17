@@ -24,6 +24,11 @@ namespace CovidSimGUI.Views
 
         public SeriesCollection SeriesCollection { get; set; }
 
+        public ushort MeetingCount
+        {
+            get => Simulator.MeetingCount;
+            set => Simulator.MeetingCount = value;
+        }
 
         private readonly LineSeries _healthyLine;
         private readonly LineSeries _asymptomaticLine;
@@ -32,45 +37,55 @@ namespace CovidSimGUI.Views
         private readonly LineSeries _deceasedLine;
         private readonly LineSeries _immuneLine;
 
+        private Simulator Simulator { get; init; }
+
         public SimulatorPage()
         {
             InitializeComponent();
             Console.SetOut(new MultiTextWriter(new ControlWriter(textBox), Console.Out));
 
+            Simulator = new Simulator(CitizenCount, MedicalStaffCount, FirstResponderCount, MilitaryCount, InfectedCitizenCount);
+
             _healthyLine = new LineSeries
             {
                 Values = new ChartValues<double> {CitizenCount + MedicalStaffCount + FirstResponderCount + MilitaryCount},
-                Title = "Healthy"
+                Title = "Healthy",
+                PointGeometrySize = 0
             };
             
             _asymptomaticLine = new LineSeries
             {
                 Values = new ChartValues<double> {0},
-                Title = "Asymptomatic"
+                Title = "Asymptomatic",
+                PointGeometrySize = 0
             };
 
             _symptomsLine = new LineSeries
             {
                 Values = new ChartValues<double> {InfectedCitizenCount},
-                Title = "Infected"
+                Title = "Infected",
+                PointGeometrySize = 0
             };
 
             _seriouslyIllLine = new LineSeries
             {
                 Values = new ChartValues<double> {0},
-                Title = "Serious"
+                Title = "Serious",
+                PointGeometrySize = 0
             };
 
             _immuneLine = new LineSeries
             {
                 Values = new ChartValues<double> {0},
-                Title = "Immune"
+                Title = "Immune",
+                PointGeometrySize = 0
             };
 
             _deceasedLine = new LineSeries
             {
                 Values = new ChartValues<double> {0},
-                Title = "Deceased"
+                Title = "Deceased",
+                PointGeometrySize = 0
             };
 
             SeriesCollection = new SeriesCollection

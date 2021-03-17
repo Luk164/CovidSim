@@ -242,7 +242,22 @@ namespace CovidSim.PersonClasses
         /// <summary>
         /// Prevention calculation based on persons gear. Based on diminishing returns principle
         /// </summary>
-        public double Prevention => 100 - Gear.Aggregate(100.0, (current, gear) => current - current * gear.PreventionModifier.Value / 100);
+        public double Prevention
+        {
+            get
+            {
+                var prevention = 100 - Gear.Aggregate(100.0,
+                    (current, gear) => current - current * gear.PreventionModifier.Value / 100);
+
+                //TODO: Find a better way to decrease infectiousness of asymptomatic citizens
+                if (Health == HealthStatusEnum.Asymptomatic && prevention < 90)
+                {
+                    return 90;
+                }
+
+                return prevention;
+            }
+        }
 
         /// <summary>
         /// Health status enumerator

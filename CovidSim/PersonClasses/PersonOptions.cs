@@ -5,13 +5,13 @@
         /// <summary>
         /// Probability of complying to quarantine regulations. Default 100%
         /// </summary>
-        public Modifier QuarantineCompliance { get; set; } = new Modifier {Value = 80};
+        public Modifier QuarantineCompliance { get; set; } = new() {Value = 80};
 
         /// <summary>
         /// Probability of complying to mandatory mask/glove regulations. Default 90%
         /// Source https://www.statista.com/statistics/1114375/wearing-a-face-mask-outside-in-european-countries/
         /// </summary>
-        public Modifier GearCompliance { get; set; } = new Modifier {Value = 90};
+        public Modifier GearCompliance { get; set; } = new() {Value = 90};
 
         /// <summary>
         /// Days to become healthy again. Patient may die during this time. Default is 14 days

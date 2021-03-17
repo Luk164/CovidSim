@@ -10,6 +10,7 @@ namespace CovidSim.GearClasses
     {
         public Modifier ProtectionModifier => new Modifier{Value = (short) new Random().Next(0, 20)} ;
 
-        public Modifier PreventionModifier { get; } = new Modifier {Value = 0};
+        //Basic hygiene habits + luck
+        public Modifier PreventionModifier { get; } = new Modifier {Value = (short)(10 + new Random().Next(0, 30)) };
     }
 }
