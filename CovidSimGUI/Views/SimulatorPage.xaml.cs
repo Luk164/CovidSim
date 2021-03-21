@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using CovidSim;
 using CovidSimGUI.Helpers;
 using LiveCharts;
@@ -134,6 +135,12 @@ namespace CovidSimGUI.Views
                 _seriouslyIllLine.Values.Add((double) args.SeriouslyIllCount);
                 _immuneLine.Values.Add((double) args.ImmuneCount);
                 _deceasedLine.Values.Add((double) args.DeceasedCount);
+
+                // ReSharper disable once PossibleLossOfFraction Don't care
+                ProgressBar.Dispatcher.Invoke(()=> {
+                    // Code causing the exception or requires UI thread access
+                    ProgressBar.Value = Math.Round(args.day / DayCount * 100.0);
+                });
             };
 
             await Task.Run(() =>

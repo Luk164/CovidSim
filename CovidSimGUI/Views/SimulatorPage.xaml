@@ -34,7 +34,7 @@
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ProgressBar Grid.Column="2" Height="6" Margin="10,382,10,0" VerticalAlignment="Top"/>
+            <ProgressBar x:Name="ProgressBar" Grid.Column="2" Height="6" Margin="10,0,10,10" VerticalAlignment="Bottom"/>
             <TextBox x:Name="textBox" Grid.Column="2" Margin="10,10,10,0" TextWrapping="Wrap" IsReadOnly="True" VerticalAlignment="Top" Height="191"/>
             <lvc:CartesianChart Grid.Column="2" Series="{Binding SeriesCollection}" ScrollMode="XY" Margin="10,206,10,25" >
                 <lvc:CartesianChart.Resources>

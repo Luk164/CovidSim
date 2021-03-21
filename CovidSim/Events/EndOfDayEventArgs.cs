@@ -14,5 +14,7 @@ namespace CovidSim.Events
         public uint SeriouslyIllCount { get; set; }
         public uint ImmuneCount { get; set; }
         public uint DeceasedCount { get; set; }
+
+        public uint day { get; set; }
     }
 }

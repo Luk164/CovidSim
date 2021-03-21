@@ -128,7 +128,8 @@ namespace CovidSim
                 SeriouslyIllCount =
                     (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.SeriouslyIll),
                 DeceasedCount = (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.Deceased),
-                ImmuneCount = (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.Immune)
+                ImmuneCount = (uint) Citizens.Count(person => person.Health == Person.HealthStatusEnum.Immune),
+                day = _day
             });
         }
 
@@ -137,7 +138,7 @@ namespace CovidSim
         /// </summary>
         private void ExecuteAllMeetingsParallel()
         {
-            Parallel.ForEach(Matches, match =>
+            _ = Parallel.ForEach(Matches, match =>
             {
                 foreach (var otherPerson in match.PeopleToMeet)
                 {
@@ -151,7 +152,7 @@ namespace CovidSim
         /// </summary>
         public void Matchmaker()
         {
-            Parallel.ForEach(Citizens, person =>
+            _ = Parallel.ForEach(Citizens, person =>
             {
                 //Generate random indexes to select people to meet with
                 var random = new Random();
@@ -172,6 +173,8 @@ namespace CovidSim
 
                 Matches.Add(new MeetList {Person = person, PeopleToMeet = peopleToMeet.ToList()});
             });
+
+            // Console.WriteLine("Matchmaker finished");
         }
 
         /// <summary>
